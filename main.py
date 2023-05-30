@@ -13,6 +13,7 @@ def index():
 @app.route('/get_imgWRF', methods=['POST'])
 def get_imgWRF():
     url = request.json.get('url')
+    print("La url es: ",url)
     username = os.environ.get('USERNAME')
     password = os.environ.get('PASSWORD')
     response = requests.get(url, auth=(username, password))
